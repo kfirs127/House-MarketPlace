@@ -2,7 +2,7 @@
 function Explore() {
   return (
     <>
-        <h1> Explore </h1>
+        <h1> Check! </h1>
     </>
   )
 }
