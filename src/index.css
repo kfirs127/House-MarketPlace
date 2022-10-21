@@ -72,21 +72,6 @@ button {
   justify-content: center;
 }
 
-.NotFoundPageButton {
-  cursor: pointer;
-  background: #ff0000;
-  border-radius: 1rem;
-  padding: 0.6rem 2rem;
-  color: #ffffff;
-  font-weight: 600;
-  font-size: 1.25rem;
-  width: 80%;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .removeIcon {
   cursor: pointer;
   position: absolute;
@@ -834,11 +819,4 @@ button {
   margin-left: 1rem;
   font-size: 0.8rem;
   opacity: 0.75;
-}
-
-.centered {
-  height: 5vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
