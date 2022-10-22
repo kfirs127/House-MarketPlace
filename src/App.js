@@ -11,7 +11,7 @@ import SignUp from "./pages/SignUp"
 import ForgotPassword from "./pages/ForgotPassword"
 import NotFound from "./pages/NotFound"
 import PrivateRoute from "./components/PrivateRoute"
-
+import CreateListing from "./pages/CreateListing"
 
 function App() {
   return (
@@ -27,6 +27,7 @@ function App() {
           <Route path="/sign-in" element={<SignIn />} />
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/create-listing" element={<CreateListing />} />
           <Route path="/not-found" element={<NotFound />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>
