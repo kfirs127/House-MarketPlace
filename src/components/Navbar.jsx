@@ -16,11 +16,10 @@ function Navbar() {
     }
     
     return (
-        <>
-            {!pathMatchRoute("/not-found") &&
-            <fotter className="navbar">
+        !pathMatchRoute("/not-found") &&
+            <footer className="navbar">
                 <nav className="navbarNav">
-                    <url className="navbarListItems">
+                    <ul className="navbarListItems">
                         <li className="navbarListItem" onClick={() => navigate("/")}>
                             <ExploreIcon fill={pathMatchRoute("/") ? "2c2c2c" : "#8f8f8f"}
                                         width="36px" hight="36px" />
@@ -42,10 +41,9 @@ function Navbar() {
                                 Profile
                             </p>
                         </li>
-                    </url>
+                    </ul>
                 </nav>
-            </fotter> }
-        </>
+            </footer>
     )
 }
 

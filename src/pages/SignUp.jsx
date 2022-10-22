@@ -6,7 +6,7 @@ import {setDoc, doc, serverTimestamp} from "firebase/firestore"
 import { Link, useNavigate } from 'react-router-dom'
 import { ReactComponent as ArrowRightIcon } from '../assets/svg/keyboardArrowRightIcon.svg'
 import visibilityIcon from '../assets/svg/visibilityIcon.svg'
-import GoogleAuth from '../componets/GoogleAuth'
+import GoogleAuth from '../components/GoogleAuth'
 
 function SignUp() {
   const [showPassword, setShowPassword] = useState(false)

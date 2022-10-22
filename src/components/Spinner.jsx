@@ -1,4 +1,4 @@
-function Sppiner() {
+function Spinner() {
   return (
     <div className="loadingSpinnerContainer">
         <div className="loadingSppiner">
@@ -7,4 +7,4 @@ function Sppiner() {
   )
 }
 
-export default Sppiner
+export default Spinner
