@@ -17,12 +17,12 @@ function Category() {
         const fetchListings = async () => {
           try {
             // Get reference
-            const listingsRef = collection(db, 'listings')
+            const listingsRef = collection(db, "listings")
             // Create a query
             const q = query(
               listingsRef,
-              where('type', '==', params.categoryName),
-              orderBy('timestamp', 'desc'),
+              where("type", "==", params.categoryName),
+              orderBy("timestamp", "desc"),
               limit(10)
             )
             // Execute query
@@ -37,7 +37,7 @@ function Category() {
             setListings(listings)
             setLoading(false)
           } catch (error) {
-            toast.error('Could not fetch listings')
+            toast.error("Could not fetch listings")
           }
         }
         fetchListings()

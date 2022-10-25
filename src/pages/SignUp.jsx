@@ -1,18 +1,18 @@
-import { useState } from 'react'
+import { useState } from "react"
 import { toast } from "react-toastify"
 import { getAuth, createUserWithEmailAndPassword, updateProfile} from "firebase/auth"
 import { db } from "../firebase.config"
 import {setDoc, doc, serverTimestamp} from "firebase/firestore"
-import { Link, useNavigate } from 'react-router-dom'
-import { ReactComponent as ArrowRightIcon } from '../assets/svg/keyboardArrowRightIcon.svg'
-import visibilityIcon from '../assets/svg/visibilityIcon.svg'
-import GoogleAuth from '../components/GoogleAuth'
+import { Link, useNavigate } from "react-router-dom"
+import { ReactComponent as ArrowRightIcon } from "../assets/svg/keyboardArrowRightIcon.svg"
+import visibilityIcon from "../assets/svg/visibilityIcon.svg"
+import GoogleAuth from "../components/GoogleAuth"
 
 function SignUp() {
   const [showPassword, setShowPassword] = useState(false)
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   })
   const { name, email, password } = formData
 
@@ -47,51 +47,51 @@ function SignUp() {
 
   return (
     <>
-      <div className='pageContainer'>
+      <div className="pageContainer">
         <header>
-          <p className='pageHeader'>Welcome Back!</p>
+          <p className="pageHeader">Welcome Back!</p>
         </header>
         <form onSubmit={onSubmit}>
           <input
-            type='text'
-            className='nameInput'
-            placeholder='Name'
-            id='name'
+            type="text"
+            className="nameInput"
+            placeholder="Name"
+            id="name"
             value={name}
             onChange={onChange}/>
           <input
-            type='email'
-            className='emailInput'
-            placeholder='Email'
-            id='email'
+            type="email"
+            className="emailInput"
+            placeholder="Email"
+            id="email"
             value={email}
             onChange={onChange}/>
-          <div className='passwordInputDiv'>
+          <div className="passwordInputDiv">
             <input
-              type={showPassword ? 'text' : 'password'}
-              className='passwordInput'
-              placeholder='Password'
-              id='password'
+              type={showPassword ? "text" : "password"}
+              className="passwordInput"
+              placeholder="Password"
+              id="password"
               value={password}
               onChange={onChange}/>
             <img
               src={visibilityIcon}
-              alt='show password'
-              className='showPassword'
+              alt="show password"
+              className="showPassword"
               onClick={() => setShowPassword((prevState) => !prevState)} />
           </div>
-          <Link to='/forgot-password' className='forgotPasswordLink'>
+          <Link to="/forgot-password" className="forgotPasswordLink">
             Forgot Password
           </Link>
-          <div className='signUpBar'>
-            <p className='signUpText'>Sign Up</p>
-            <button className='signUpButton'>
-              <ArrowRightIcon fill='#ffffff' width='34px' height='34px' />
+          <div className="signUpBar">
+            <p className="signUpText">Sign Up</p>
+            <button className="signUpButton">
+              <ArrowRightIcon fill="#ffffff" width="34px" height="34px" />
             </button>
           </div>
         </form>
         <GoogleAuth />
-        <Link to='/sign-in' className='registerLink'>
+        <Link to="/sign-in" className="registerLink">
           Sign In Instead
         </Link>
       </div>

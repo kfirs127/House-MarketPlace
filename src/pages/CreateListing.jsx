@@ -59,13 +59,13 @@ function CreateListing() {
     
         if (discountedPrice >= regularPrice) {
           setLoading(false)
-          toast.error('Discounted price needs to be less than regular price')
+          toast.error("Discounted price needs to be less than regular price")
           return
         }
     
         if (images.length > 6) {
           setLoading(false)
-          toast.error('Max 6 images')
+          toast.error("Max 6 images")
           return
         }
     
@@ -84,13 +84,13 @@ function CreateListing() {
           gLocation.lng = data.results[0]?.geometry.location.lng ?? 0
     
           location =
-            data.status === 'ZERO_RESULTS'
+            data.status === "ZERO_RESULTS"
               ? undefined
               : data.results[0]?.formatted_address
     
-          if (location === undefined || location.includes('undefined')) {
+          if (location === undefined || location.includes("undefined")) {
             setLoading(false)
-            toast.error('Please enter a correct address')
+            toast.error("Please enter a correct address")
             return
           }
         } else {
@@ -104,22 +104,22 @@ function CreateListing() {
             const storage = getStorage()
             const fileName = `${auth.currentUser.uid}-${image.name}-${uuidv4()}`
     
-            const storageRef = ref(storage, 'images/' + fileName)
+            const storageRef = ref(storage, "images/" + fileName)
     
             const uploadTask = uploadBytesResumable(storageRef, image)
     
             uploadTask.on(
-              'state_changed',
+              "state_changed",
               (snapshot) => {
                 const progress =
                   (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-                console.log('Upload is ' + progress + '% done')
+                console.log("Upload is " + progress + "% done")
                 switch (snapshot.state) {
-                  case 'paused':
-                    console.log('Upload is paused')
+                  case "paused":
+                    console.log("Upload is paused")
                     break
-                  case 'running':
-                    console.log('Upload is running')
+                  case "running":
+                    console.log("Upload is running")
                     break
                   default:
                     break
@@ -143,7 +143,7 @@ function CreateListing() {
           [...images].map((image) => storeImage(image))
         ).catch(() => {
           setLoading(false)
-          toast.error('Images not uploaded')
+          toast.error("Images not uploaded")
           return
         })
 
@@ -159,9 +159,9 @@ function CreateListing() {
         delete formDataCopy.address
         !formDataCopy.offer && delete formDataCopy.discountedPrice
       
-        const docRef = await addDoc(collection(db, 'listings'), formDataCopy)
+        const docRef = await addDoc(collection(db, "listings"), formDataCopy)
         setLoading(false)
-        toast.success('Listing saved')
+        toast.success("Listing saved")
         navigate(`/category/${formDataCopy.type}/${docRef.id}`)
     }
 

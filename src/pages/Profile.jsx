@@ -54,23 +54,23 @@ function Profile() {
             <main>
               <div className="profileDetailsHeader">
                 <p className="profileDetailsText"> Personal Details </p>
-                <p className='changePersonalDetails' onClick={onClick}>
-                  {changeDetails ? 'done' : 'change'}
+                <p className="changePersonalDetails" onClick={onClick}>
+                  {changeDetails ? "done" : "change"}
                 </p>
               </div>
-              <div className='profileCard'>
+              <div className="profileCard">
                 <form>
                   <input
-                    type='text'
-                    id='name'
-                    className={!changeDetails ? 'profileName' : 'profileNameActive'}
+                    type="text"
+                    id="name"
+                    className={!changeDetails ? "profileName" : "profileNameActive"}
                     disabled={!changeDetails}
                     value={name}
                     onChange={onChange}/>
                   <input
-                    type='text'
-                    id='email'
-                    className={!changeDetails ? 'profileEmail' : 'profileEmailActive'}
+                    type="text"
+                    id="email"
+                    className={!changeDetails ? "profileEmail" : "profileEmailActive"}
                     disabled={!changeDetails}
                     value={email}
                     onChange={onChange}/>

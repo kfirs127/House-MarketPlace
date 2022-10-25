@@ -1,16 +1,16 @@
-import { useState } from 'react'
+import { useState } from "react"
 import { toast } from "react-toastify"
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, useNavigate } from "react-router-dom"
 import { getAuth, signInWithEmailAndPassword} from "firebase/auth"
-import { ReactComponent as ArrowRightIcon } from '../assets/svg/keyboardArrowRightIcon.svg'
-import visibilityIcon from '../assets/svg/visibilityIcon.svg'
-import GoogleAuth from '../components/GoogleAuth'
+import { ReactComponent as ArrowRightIcon } from "../assets/svg/keyboardArrowRightIcon.svg"
+import visibilityIcon from "../assets/svg/visibilityIcon.svg"
+import GoogleAuth from "../components/GoogleAuth"
 
 function SignIn() {
   const [showPassword, setShowPassword] = useState(false)
   const [formData, setFormData] = useState({
-    email: '',
-    password: '',
+    email: "",
+    password: "",
   })
   const { email, password } = formData
 
@@ -38,44 +38,44 @@ function SignIn() {
 
   return (
     <>
-      <div className='pageContainer'>
+      <div className="pageContainer">
         <header>
-          <p className='pageHeader'>Welcome Back!</p>
+          <p className="pageHeader">Welcome Back!</p>
         </header>
         <form onSubmit={onSubmit}>
           <input
-            type='email'
-            className='emailInput'
-            placeholder='Email'
-            id='email'
+            type="email"
+            className="emailInput"
+            placeholder="Email"
+            id="email"
             value={email}
             onChange={onChange}/>
-          <div className='passwordInputDiv'>
+          <div className="passwordInputDiv">
             <input
-              type={showPassword ? 'text' : 'password'}
-              className='passwordInput'
-              placeholder='Password'
-              id='password'
+              type={showPassword ? "text" : "password"}
+              className="passwordInput"
+              placeholder="Password"
+              id="password"
               value={password}
               onChange={onChange}/>
             <img
               src={visibilityIcon}
-              alt='show password'
-              className='showPassword'
+              alt="show password"
+              className="showPassword"
               onClick={() => setShowPassword((prevState) => !prevState)} />
           </div>
-          <Link to='/forgot-password' className='forgotPasswordLink'>
+          <Link to="/forgot-password" className="forgotPasswordLink">
             Forgot Password
           </Link>
-          <div className='signInBar'>
-            <p className='signInText'>Sign In</p>
-            <button className='signInButton'>
-              <ArrowRightIcon fill='#ffffff' width='34px' height='34px' />
+          <div className="signInBar">
+            <p className="signInText">Sign In</p>
+            <button className="signInButton">
+              <ArrowRightIcon fill="#ffffff" width="34px" height="34px" />
             </button>
           </div>
         </form>
         <GoogleAuth /> 
-        <Link to='/sign-up' className='registerLink'>
+        <Link to="/sign-up" className="registerLink">
           Sign Up Instead
         </Link>
       </div>

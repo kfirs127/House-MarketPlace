@@ -31,7 +31,7 @@ function App() {
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/create-listing" element={<CreateListing />} />
           <Route path="/category/:categoryName/:listingId" element={<Listing />} />
-          <Route path='/contact/:landlordId' element={<Contact />} />
+          <Route path="/contact/:landlordId" element={<Contact />} />
           <Route path="/not-found" element={<NotFound />} />
           <Route path="/*" element={<NotFound />} />
         </Routes>
