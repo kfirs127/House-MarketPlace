@@ -122,10 +122,9 @@ function EditListing() {
 
     //to add it, need to go over lesson 100
     if (geolocation) {
-      // const response = await fetch(
-      //   `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_GEOCODE_API_KEY}`
-      // )
-      const response = await fetch("google.com")
+      const response = await fetch(
+        `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_GEOCODE_API_KEY}`
+      )
 
       const data = await response.json()
 
