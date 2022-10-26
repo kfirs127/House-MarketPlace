@@ -118,35 +118,34 @@ function EditListing() {
     }
 
     let gLocation = {}
-    let location
+    //let location
 
     //to add it, need to go over lesson 100
-    if (geolocation) {
-      // const response = await fetch(
-      //   `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_GEOCODE_API_KEY}`
-      // )
+    // if (geolocation) {
+    //   const response = await fetch(
+    //     `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${process.env.REACT_APP_GEOCODE_API_KEY}`
+    //   )
+    //   const data = await response.json()
 
-      const response = await fetch("google.com")
+    //   gLocation.lat = data.results[0]?.geometry.location.lat ?? 0
+    //   gLocation.lng = data.results[0]?.geometry.location.lng ?? 0
 
-      const data = await response.json()
+    //   location =
+    //     data.status === "ZERO_RESULTS"
+    //       ? undefined
+    //       : data.results[0]?.formatted_address
 
-      gLocation.lat = data.results[0]?.geometry.location.lat ?? 0
-      gLocation.lng = data.results[0]?.geometry.location.lng ?? 0
-
-      location =
-        data.status === "ZERO_RESULTS"
-          ? undefined
-          : data.results[0]?.formatted_address
-
-      if (location === undefined || location.includes("undefined")) {
-        setLoading(false)
-        toast.error("Please enter a correct address")
-        return
-      }
-    } else {
-      gLocation.lat = latitude
-      gLocation.lng = longitude
-    }
+    //   if (location === undefined || location.includes("undefined")) {
+    //     setLoading(false)
+    //     toast.error("Please enter a correct address")
+    //     return
+    //   }
+    // } else {
+    //   gLocation.lat = latitude
+    //   gLocation.lng = longitude
+    // }
+    gLocation.lat = latitude
+    gLocation.lng = longitude
 
     // Store image in firebase
     const storeImage = async (image) => {
